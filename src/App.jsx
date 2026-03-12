@@ -1,17 +1,18 @@
-react-router-dom
-./context/AuthContext
-./Pages/AuthPage
-./Pages/HomePage
-./Pages/RestaurantPage
-./Pages/CartPage
-./Pages/CheckoutPage
-./Pages/OrdersPage
-./Pages/OrderTrackingPage
-./Pages/FavouritesPage
-./Pages/ProfilePage
-./Pages/SearchPage
-./Pages/CategoryPage
-./Components/Layout/AppLayou
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useAuth } from "./context/AuthContext";
+import AuthPage          from "./Pages/AuthPage";
+import HomePage          from "./Pages/HomePage";
+import RestaurantPage    from "./Pages/RestaurantPage";
+import CartPage          from "./Pages/CartPage";
+import CheckoutPage      from "./Pages/CheckoutPage";
+import OrdersPage        from "./Pages/OrdersPage";
+import OrderTrackingPage from "./Pages/OrderTrackingPage";
+import FavouritesPage    from "./Pages/FavouritesPage";
+import ProfilePage       from "./Pages/ProfilePage";
+import SearchPage        from "./Pages/SearchPage";
+import CategoryPage      from "./Pages/CategoryPage";
+import AppLayout         from "./Components/Layout/AppLayout";
+
 function Guard({ children }) {
   const { user } = useAuth();
   return user ? children : <Navigate to="/auth" replace />;
